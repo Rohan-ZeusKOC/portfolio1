@@ -1,0 +1,206 @@
+/* --- Global Reset and Styling --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Professional font */
+    background-color: #f4f4f9; /* Light, clean background */
+    color: #333;
+    line-height: 1.6;
+    padding: 0; /* remove global padding so navbar can span full width */
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    background-color: black;
+    overflow: hidden;
+    z-index: 1000;
+    border-bottom: 2px solid rgb(255, 251, 227);
+    padding: 8px 0;
+    margin: 0; /* remove margin so navbar sits flush */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: rgb(255, 252, 235);
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgb(209, 208, 203);
+    color: black;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1, h2, h3 {
+    color: #0056b3; /* A professional blue color */
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 86, 179, 0.75), rgba(0, 0, 0, 0));
+    margin: 30px 0;
+}
+
+/* --- Header & Profile Styling --- */
+.main-header {
+    background: #0056b3;
+    color: #fff;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header h1 {
+    color: #fff;
+    font-weight: 700;
+    margin-top: 10px;
+    /* Animation: Slide In */
+    animation: slideIn 1s ease-out;
+}
+
+.subtitle {
+    color: #add8e6; /* Lighter blue for subtitle */
+    font-weight: 300;
+    /* Animation: Fade In */
+    animation: fadeIn 2s ease-in;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid #fff;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    /* Animation: Spin on Hover */
+    transition: transform 0.5s ease;
+}
+
+.profile-picture img:hover {
+    transform: rotate(360deg) scale(1.05);
+}
+
+/* --- Section Styling --- */
+.division {
+    padding: 20px 0;
+}
+
+.division h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    /* Animation: Underline on Hover */
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.division h2:hover {
+    color: #ff8c00; /* A touch of accent color */
+}
+
+/* List Styling */
+ul, .skill-list {
+    list-style-type: none; /* Remove default bullet/number */
+    padding-left: 0;
+}
+
+li {
+    background: #eef;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-left: 4px solid #0056b3;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+    /* Animation: Lift on Hover */
+}
+
+li:hover {
+    background-color: #dbe4f0;
+    transform: translateX(5px); /* Slide slightly to the right */
+}
+
+/* --- Footer Styling --- */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+/* --- Keyframes for Animations --- */
+
+/* 1. Slide-in from top (for the main name) */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Simple Fade-in (for subtitle) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 3. Section Fade-in (for content blocks) */
+.division {
+    /* ... other division styles ... */
+    opacity: 0;
+    animation: sectionFadeIn 1s ease-out forwards;
+}
+
+/* Stagger the section animations for a cleaner look */
+.about-me { animation-delay: 0.5s; }
+.skills { animation-delay: 1.0s; }
+.projects { animation-delay: 1.5s; }
+.contact-info { animation-delay: 2.0s; }
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
